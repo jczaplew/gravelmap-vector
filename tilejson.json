@@ -1,0 +1,15 @@
+{
+    "tilejson": "2.2.0",
+    "name": "Gravelmap",
+    "description": "Community-currated gravel roads from gravelmap.com",
+    "version": "1.0.0",
+    "attribution": "gravelmap.com",
+    "scheme": "xyz",
+    "tiles": [
+        "https://s3.amazonaws.com/org.czaplewski.gravelmap/{z}/{x}/{y}.pbf"
+    ],
+    "minzoom": 0,
+    "maxzoom": 12,
+    "bounds": [ -180, -85, 180, 85 ],
+    "mapboxGLStyle": "https://s3.amazonaws.com/org.czaplewski.gravelmap/style.json"
+}

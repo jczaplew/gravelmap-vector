@@ -1,0 +1,38 @@
+{
+    "version": 8,
+    "name": "Gravelmap",
+    "center": [-92.4997, 44.4782],
+    "zoom": 12,
+    "bearing": 0,
+    "pitch": 0,
+    "sources": {
+        "gravelmap": {
+            "type": "vector",
+            "tiles": [
+                "https://s3.amazonaws.com/org.czaplewski.gravelmap/{z}/{x}/{y}.pbf"
+            ],
+            "minZoom": 0,
+            "maxZoom": 12,
+            "maxzoom": 12
+        }
+    },
+    "layers": [{
+        "id": "gravelmap",
+        "type": "line",
+        "source": "gravelmap",
+        "source-layer": "gravel",
+        "layout": {"line-cap": "butt", "line-join": "bevel"},
+        "paint": {
+            "line-color": "rgba(90, 88, 88, 1)",
+            "line-width": [
+                "interpolate", ["linear"], ["zoom"],
+                9, 1,
+                18, 7
+            ],
+            "line-opacity": 0.95,
+            "line-dasharray": [0.8, 0.8]
+        }
+    }],
+    "id": "gravelmap",
+    "modified": "2020-03-01T07:00:00.000Z"
+}

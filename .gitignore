@@ -2,4 +2,4 @@ gravelmap.geojson
 gravelmap.mbtiles
 .DS_Store
 node_modules
-
+tiles
