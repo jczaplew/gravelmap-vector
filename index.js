@@ -31,8 +31,10 @@ async function getData(cell) {
             const response = JSON.parse(body);
 
             Object.keys(response.vispaths).forEach(key => {
-                const {raw_points} = response.vispaths[key];
-                if (!raw_points) return;
+                const {raw_points, type} = response.vispaths[key];
+
+                // Type can be segment or routes. Routes should be merged with segments
+                if (!raw_points || type !== 'segment') return;
 
                 output.write(JSON.stringify({
                     type: 'Feature',
@@ -56,6 +58,5 @@ function rawPointsToGeoJSON(coords) {
                 .split('|')
                 .map(coord => coord.split(','))
                 .map(coord => coord.map(parseFloat).reverse())
-
     }
 }
